@@ -38,7 +38,7 @@ describe('<App />', () => {
     it('shows the Decrease button', () => {
       renderComponent();
 
-      const decreaseButton = getButton('Decrease' );
+      const decreaseButton = getButton('Decrease');
 
       expect(decreaseButton).toBeInTheDocument();
     });

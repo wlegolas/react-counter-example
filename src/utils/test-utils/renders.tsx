@@ -11,5 +11,7 @@ export function renderWithCounterProvider({ children }: RenderWithCounterProvide
   return <CounterProvider>{children}</CounterProvider>;
 }
 
-export const renderHookWithCounterProvider = <TProps, TResult>(render: (props: TProps) => TResult): RenderHookResult<TResult, TProps> =>
+export const renderHookWithCounterProvider = <TProps, TResult>(
+  render: (props: TProps) => TResult,
+): RenderHookResult<TResult, TProps> =>
   renderHook(render, { wrapper: ({ children }) => <CounterProvider>{children}</CounterProvider> });
