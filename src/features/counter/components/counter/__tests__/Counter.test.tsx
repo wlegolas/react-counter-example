@@ -1,4 +1,4 @@
-import { render, screen, clickOnButton } from '~/utils/test-utils';
+import { render, screen, clickOnButton, getButton } from '~/utils/test-utils';
 import { Counter } from '../Counter';
 
 async function renderWithIncreasedValue(times = 1) {
@@ -22,7 +22,7 @@ describe('<Counter />', () => {
     it('shows the Increase button', () => {
       renderComponent();
 
-      const incrementButton = screen.getByRole('button', { name: 'Increase' });
+      const incrementButton = getButton('Increase');
 
       expect(incrementButton).toBeInTheDocument();
     });
@@ -30,7 +30,7 @@ describe('<Counter />', () => {
     it('shows the Decrease button', () => {
       renderComponent();
 
-      const decreaseButton = screen.getByRole('button', { name: 'Decrease' });
+      const decreaseButton = getButton('Decrease');
 
       expect(decreaseButton).toBeInTheDocument();
     });
@@ -38,7 +38,7 @@ describe('<Counter />', () => {
     it('shows the Reset button', () => {
       renderComponent();
 
-      const resetButton = screen.getByRole('button', { name: 'Reset' });
+      const resetButton = getButton('Reset');
 
       expect(resetButton).toBeInTheDocument();
     });

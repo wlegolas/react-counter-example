@@ -1,4 +1,4 @@
-import { render, screen, clickOnButton } from '~/utils/test-utils';
+import { render, clickOnButton, getButton } from '~/utils/test-utils';
 import { generateCountContextResult } from '~/utils/test-utils/generators';
 import { useCounter } from '~/features/counter/hooks/useCounter';
 import { CounterActions } from '../CounterActions';
@@ -17,7 +17,7 @@ describe('<CounterActions />', () => {
     it('shows the Increase button enabled', () => {
       render(<CounterActions />);
 
-      const incrementButton = screen.getByRole('button', { name: 'Increase' });
+      const incrementButton = getButton('Increase');
 
       expect(incrementButton).toBeEnabled();
     });
@@ -42,7 +42,7 @@ describe('<CounterActions />', () => {
       it('shows the Decrease button enabled', () => {
         render(<CounterActions />);
 
-        const decreaseButton = screen.getByRole('button', { name: 'Decrease' });
+        const decreaseButton = getButton('Decrease');
 
         expect(decreaseButton).toBeEnabled();
       });
@@ -50,7 +50,7 @@ describe('<CounterActions />', () => {
       it('shows the Reset button enabled', () => {
         render(<CounterActions />);
 
-        const resetButton = screen.getByRole('button', { name: 'Reset' });
+        const resetButton = getButton('Reset');
 
         expect(resetButton).toBeEnabled();
       });
@@ -86,7 +86,7 @@ describe('<CounterActions />', () => {
       it('shows the Decrease button disabled', () => {
         render(<CounterActions />);
 
-        const decreaseButton = screen.getByRole('button', { name: 'Decrease' });
+        const decreaseButton = getButton('Decrease');
 
         expect(decreaseButton).toBeDisabled();
       });
@@ -94,7 +94,7 @@ describe('<CounterActions />', () => {
       it('shows the Reset button disabled', () => {
         render(<CounterActions />);
 
-        const resetButton = screen.getByRole('button', { name: 'Reset' });
+        const resetButton = getButton('Reset');
 
         expect(resetButton).toBeDisabled();
       });
