@@ -11,6 +11,8 @@ In this project there are two `features`:
 - **app**: This feature provides all things related to the application.
 - **counter**: This feature provides all mechanism to interact with the Counter.
 
+You can check the documentation [Functionalities](docs/FUNCTIONALITIES.md) to see more information about the project and the functionalities.
+
 ## 🛠 Tech stack
 
 ### Project structure
