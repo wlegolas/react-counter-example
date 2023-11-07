@@ -7,6 +7,7 @@ const jestConfig: JestConfigWithTsJest = {
   clearMocks: true,
   roots: ['<rootDir>'],
   preset: 'ts-jest',
+  setupFilesAfterEnv: ['<rootDir>/src/jest-setup.ts'],
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>' }),
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['/node_modules/', '/dist/'],
